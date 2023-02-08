@@ -14,7 +14,7 @@ depends: [
   "base-domains" {post}
   "base-nnp" {post}
   "ocaml-option-bytecode-only" {arch != "arm64" & arch != "x86_64"}
-  ("conf-flexdll" {os = "cygwin"} | flexdll" {os = "win32"} | "flexdll-bin" {os = "win32"} & "flexlink" {post})
+  "conf-flexdll"
 ]
 conflict-class: "ocaml-core-compiler"
 flags: compiler
@@ -118,4 +118,4 @@ depopts: [
   #       OCaml should recompile with it.
   "flexdll"
 ]
-available: os = "win32" | os = "cygwin"
+available: os = "cygwin"
