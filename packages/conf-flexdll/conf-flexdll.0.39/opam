@@ -9,7 +9,7 @@ license: "Zlib"
 homepage: "https://github.com/ocaml/flexdll#readme"
 bug-reports: "https://github.com/ocaml/flexdll/issues"
 flags: conf
-build: ["sh" "-c" "[\"`flexlink -help | head -n1`\" = 'Flexdll version 0.39']"]
+build: ["sh" "-c" "[ \"`flexlink -help | head -n1`\" = 'Flexdll version 0.39' ]"]
 depexts: [
   ["flexdll"] {os = "win32" & os-distribution = "cygwinports"}
 ]
