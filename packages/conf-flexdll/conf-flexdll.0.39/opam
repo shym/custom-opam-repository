@@ -10,6 +10,11 @@ homepage: "https://github.com/ocaml/flexdll#readme"
 bug-reports: "https://github.com/ocaml/flexdll/issues"
 flags: conf
 build: ["sh" "-c" "[ \"`flexlink -help | head -n1`\" = 'FlexDLL version 0.39' ]"]
+conflicts: [
+  "flexdll"
+  "flexdll-bin"
+  "flexlink"
+]
 depexts: [
-  ["flexdll"] {os = "win32" & os-distribution = "cygwinports"}
+  ["flexdll"] {os = "cygwin"}
 ]
