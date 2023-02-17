@@ -55,7 +55,4 @@ dev-repo: "git+https://github.com/shym/ppxlib.git"
 url {
   src:
     "https://github.com/shym/ppxlib/archive/5.1.tar.gz"
-  checksum: [
-    "sha256=5730f7e4c7513d47f3c94d604eede4cabe5bfa32919d061e24170d4f2540460f"
-  ]
 }
