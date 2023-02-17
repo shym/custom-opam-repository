@@ -16,7 +16,7 @@ depends: [
   "base-nnp" {post}
   "ocaml-option-bytecode-only" {arch != "arm64" & arch != "x86_64"}
   "conf-flexdll" {os = "cygwin"}
-  ("flexdll" | "flexdll-bin" & "flexlink" {post}) {os = "win32"}
+  ("flexdll" {os = "win32"} | "flexdll-bin" {os = "win32"} & "flexlink" {os = "win32" & post})
 ]
 conflict-class: "ocaml-core-compiler"
 flags: compiler
