@@ -20,7 +20,7 @@ doc: "https://ocaml-ppx.github.io/ppxlib/"
 bug-reports: "https://github.com/ocaml-ppx/ppxlib/issues"
 depends: [
   "dune" {>= "2.7"}
-  "ocaml" {>= "5.1.0"}
+  "ocaml" {= "5.1.0"}
   "ocaml-compiler-libs" {>= "v0.11.0"}
   "ppx_derivers" {>= "1.0"}
   "sexplib0" {>= "v0.12"}
@@ -51,8 +51,8 @@ build: [
     "@doc" {with-doc}
   ]
 ]
-dev-repo: "git+https://github.com/shym/ppxlib.git"
+dev-repo: "git+https://github.com/ocaml-ppx/ppxlib.git"
 url {
   src:
-    "https://github.com/shym/ppxlib/archive/5.1.tar.gz"
+    "https://github.com/ocaml-ppx/ppxlib/archive/trunk-support.tar.gz"
 }
