@@ -54,5 +54,5 @@ build: [
 dev-repo: "git+https://github.com/shym/ppxlib.git"
 url {
   src:
-    "https://github.com/shym/ppxlib/archive/5.1.tar.gz"
+    "https://github.com/shym/ppxlib/archive/5.2-support.tar.gz"
 }
