@@ -1,13 +1,13 @@
 opam-version: "2.0"
 license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
-synopsis: "Latest OCaml 5.2 development version, configured for Windows"
+synopsis: "OCaml development version, configured for Windows"
 maintainer: "platform@lists.ocaml.org"
 authors: ["Xavier Leroy" "Damien Doligez" "Alain Frisch" "Jacques Garrigue" "Didier Rémy" "Jérôme Vouillon"]
 homepage: "https://ocaml.org"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
-dev-repo: "git+https://github.com/ocaml/ocaml.git#5.2"
+dev-repo: "git+https://github.com/ocaml/ocaml.git#trunk"
 depends: [
-  "ocaml" {= "5.2.0" & post}
+  "ocaml" {= "5.3.0" & post}
   "base-unix" {post}
   "base-bigarray" {post}
   "base-threads" {post}
@@ -89,7 +89,7 @@ build: [
 ]
 install: [make "install"]
 url {
-  src: "https://github.com/ocaml/ocaml/archive/5.2.tar.gz"
+  src: "https://github.com/ocaml/ocaml/archive/trunk.tar.gz"
 }
 extra-files: ["ocaml-variants.install" "md5=3e969b841df1f51ca448e6e6295cb451"]
 post-messages: [
