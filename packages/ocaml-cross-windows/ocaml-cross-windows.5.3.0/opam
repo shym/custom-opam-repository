@@ -39,10 +39,10 @@ build: [
   [make "-j%{jobs}%" "crossopt"]
 ]
 install: [
-  [make "installcross"]
+  [make "installcross" "prefix=%{_:lib}%"]
   [make "-f" "Makefile.ocamlfindconf" "%{lib}%/findlib.conf.d/%{name}%.conf"]
 ]
-patches: ["ocross-squashed.patch" "ocamlfindconf.patch"]
+patches: ["ocross-squashed.patch" "ocamlfindconf.patch" "sandbox.patch"]
 dev-repo: "git+https://github.com/shym/ocaml.git#5.3+ocross"
 url {
   src:
@@ -61,4 +61,10 @@ extra-source "ocross-squashed.patch" {
     "https://github.com/shym/ocaml/commit/1515ed9f7c8e2e7feb9864115b12040532a07230.patch"
   checksum:
     "sha256=709f9cdcff74a76d6884e43a3274799e509a980456555f15c7b1002b8392ff55"
+}
+extra-source "sandbox.patch" {
+  src:
+    "https://github.com/shym/ocaml/commit/06f99a4883531908eaac59dc9f5975ae2baae5cb.patch"
+  checksum:
+    "sha256=2931e00fba6c2540fd097745465ece6305e999609ceb3bdc9314c180981b29ec"
 }
