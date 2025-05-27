@@ -1,0 +1,45 @@
+opam-version: "2.0"
+synopsis: "OCaml 5.3.0 cross compiler to Windows MinGW"
+maintainer: "Samuel Hym <samuel@tarides.com>"
+authors: "Xavier Leroy and many contributors"
+license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
+homepage: "https://ocaml.org"
+bug-reports: "https://github.com/ocaml/opam-repository/issues"
+depends: [
+  "ocaml" {= version}
+  "flexdll" {>= "0.42"}
+]
+depopts: [
+  "ocaml-option-afl"
+  "ocaml-option-no-flat-float-array"
+  "ocaml-option-flambda"
+  "ocaml-option-fp"
+  "ocaml-option-no-compression"
+  "ocaml-option-static"
+  "ocaml-option-tsan"
+]
+conflicts: ["ocaml-option-32bit" "ocaml-option-bytecode-only"]
+build: [
+  [
+    "./configure"
+    "--target=x86_64-w64-mingw32"
+    "--prefix=%{prefix}%/lib/ocaml-cross-compiler"
+    "--with-flexdll=%{flexdll:share}%"
+    "--with-afl" {ocaml-option-afl:installed}
+    "--disable-flat-float-array" {ocaml-option-no-flat-float-array:installed}
+    "--enable-flambda" {ocaml-option-flambda:installed}
+    "--enable-frame-pointers" {ocaml-option-fp:installed}
+    "--without-zstd" {ocaml-option-no-compression:installed}
+    "--enable-tsan" {ocaml-option-tsan:installed}
+    "--disable-warn-error"
+  ]
+  [make "-j%{jobs}%" "crossopt"]
+]
+install: [
+  [make "installcross"]
+]
+dev-repo: "git+https://github.com/shym/ocaml.git#5.3+ocross"
+url {
+  src:
+    "git+https://github.com/shym/ocaml.git#f565c864c27fdf751fd8ce4e26c7261cc598e6e6"
+}

@@ -1,0 +1,20 @@
+opam-version: "2.0"
+synopsis: "OCaml cross-compiler toolchain"
+maintainer: "Samuel Hym <samuel@tarides.com>"
+authors: "Samuel Hym"
+license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
+depends: [
+  "ocaml-cross-compiler" {= version}
+]
+build: [
+  [ make "-f" "Makefile.ocamlfindconf" "cross.conf" "EXE=.exe" ]
+]
+install: [
+  [ "mkdir" "-p" "%{lib}%/findlib.conf.d" ]
+  [ "cp" "cross.conf" "%{lib}%/findlib.conf.d/cross.conf" ]
+]
+dev-repo: "git+https://github.com/shym/ocaml.git#5.3+ocross"
+url {
+  src:
+    "git+https://github.com/shym/ocaml.git#f565c864c27fdf751fd8ce4e26c7261cc598e6e6"
+}
