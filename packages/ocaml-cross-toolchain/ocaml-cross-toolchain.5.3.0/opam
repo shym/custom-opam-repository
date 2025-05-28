@@ -13,6 +13,10 @@ install: [
   [ "mkdir" "-p" "%{lib}%/findlib.conf.d" ]
   [ "cp" "cross.conf" "%{lib}%/findlib.conf.d/cross.conf" ]
 ]
+# Unfortunately, the following trick fails with dune pkg
+# setenv: [
+#   OCAMLFIND_CONF = "%{lib}%/findlib.conf.d/cross.conf"
+# ]
 dev-repo: "git+https://github.com/shym/ocaml.git#5.3+ocross"
 url {
   src:
